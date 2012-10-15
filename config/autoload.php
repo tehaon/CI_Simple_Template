@@ -7,4 +7,4 @@ $autoload['config'] = array('paths');
 $autoload['helper'] = array('ci_simple_template_helper');
 
 #Load libraries when spark is loaded.
-$autoload['library'] = array('ci_simple_template');
+$autoload['libraries'] = array('CI_Simple_Template');

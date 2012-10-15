@@ -27,9 +27,9 @@ class CI_Simple_Template
         }
     }
 
-    public function render($view, $data)
+    public function render($view, $data = array())
     {
-        $this->set('content', $this->_CI->load->view($view, $data));
+        $this->set('contents', $this->_CI->load->view($view, $data, TRUE));
         return $this->_CI->load->view($this->getTemplateName(), $this->_data);
     }
 
@@ -51,8 +51,8 @@ class CI_Simple_Template
     public function getTemplateName()
     {
         return (!empty($this->_template)) ?
-            $this->config->item('CI_SIMPLE_TEMPLATE_TEMPLATES_PATH') . $this->_template :
-            $this->config->item('CI_SIMPLE_TEMPLATE_TEMPLATES_PATH') . $this->confg->item('CI_SIMPLE_TEMPLATE_DEFAULT_TEMPLATE');
+            $this->_CI->config->item('CI_SIMPLE_TEMPLATE_TEMPLATES_PATH') . $this->_template :
+            $this->_CI->config->item('CI_SIMPLE_TEMPLATE_TEMPLATES_PATH') . $this->_CI->config->item('CI_SIMPLE_TEMPLATE_DEFAULT_TEMPLATE');
     }
 
     public function getCSS()

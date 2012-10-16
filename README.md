@@ -1,4 +1,4 @@
-#CI_SImple_Template
+#CI_Simple_Template
 
 My goal with this, was to make a really simple basic template system for those who really don't want to learn complicated
 templating libraries. You really just set variables, and then give it a view. You can set your template in your config

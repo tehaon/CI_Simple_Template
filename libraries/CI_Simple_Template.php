@@ -18,16 +18,14 @@ class CI_Simple_Template
         $this->_data[$name] = $value;
     }
 
-    public function arrSet($array)
+    public function arrSet(array $array)
     {
-        if (is_array($array)) {
-            foreach ($array as $key => $val) {
-                $this->set($key, $val);
-            }
+        foreach ($array as $key => $val) {
+            $this->set($key, $val);
         }
     }
 
-    public function render($view, $data = array())
+    public function render($view, array $data = array())
     {
         $this->set('contents', $this->_CI->load->view($view, $data, TRUE));
         return $this->_CI->load->view($this->getTemplateName(), $this->_data);
